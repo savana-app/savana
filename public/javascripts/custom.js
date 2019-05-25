@@ -125,20 +125,14 @@ $(document).ready(function() {
 
 
 
-        $("#signmessage").click(function (){
-
-         //web3.personal.sign(web3.fromUtf8("Hello from savana!"), web3.eth.coinbase, console.log);
-
-         //var result = web3.eth.sign("0x135a7de83802408321b74c322f8558db1679ac20",
-        //       "0x9dd2c369a187b4e6b9c402f030e50743e619301ea62aa4c0737d4ef7e10a3d49"); // second argument is web3.sha3("xyz")
-        //    console.log(result);
+   $("#signmessage").click(function (){
 
 
-   const message = web3.sha3("Hello from savana!")
+   const message = web3.sha3("Hello from savana22!")
    console.log('messageqq', message);
    console.log(web3.eth.coinbase);
 
-   web3.personal.sign(message, web3.eth.coinbase, function (err, signature) {
+   web3.eth.sign(web3.eth.coinbase, message , function (err, signature) {
      console.log("signed message here", signature);
      console.log("messageqq", message);
 

@@ -18,15 +18,18 @@ app.post('/getSign',function(req,res){
     console.log("User signature = "+signature+", message is "+message);
 
     const {v, r, s} = util.fromRpcSig(signature);
+
+
+
     console.log("users message here:" ,message);
     console.log("i generate this msh from strech");
     var newmsg  = util.toBuffer(message);
 
     console.log("newmsg2", newmsg);
 
-    //console.log(v);
-    //console.log(r);
-    //console.log(s);
+    console.log(v);
+    console.log(r);
+    console.log(s);
     const pubKey  = util.ecrecover(newmsg, v, r, s);
     const addrBuf = util.pubToAddress(pubKey);
     const addr    = util.bufferToHex(addrBuf);
