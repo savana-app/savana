@@ -134,12 +134,40 @@ $(document).ready(function() {
         //    console.log(result);
 
 
-   const message = web3.fromUtf8("Hello from savana!")
+   const message = web3.sha3("Hello from savana!")
    console.log('messageqq', message);
+   console.log(web3.eth.coinbase);
 
-   web3.personal.sign(message, web3.eth.coinbase, function (err, result) {
-     console.log("geldiler", result);
-     window.alert(result);
+   web3.personal.sign(message, web3.eth.coinbase, function (err, signature) {
+     console.log("signed message here", signature);
+     console.log("messageqq", message);
+
+
+     $.ajax({
+       type:'POST',
+       url:'/getSign/',
+       data:{signature: signature, message:message},
+       success:function(msg){
+         console.log(msg);
+         if (msg["response"] == "ok") {
+           console.log(msg);
+          }
+         else {
+              console.log(msg);
+         }
+       },
+     });
+
+
+
+     //window.alert(result);
+
+     //web3.personal.ecRecover(message, result, function (err, result) {
+     //   console.log("pu yayayya",err, result);
+     //  });
+
+
+
    });
 
 
