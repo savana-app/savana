@@ -38,6 +38,11 @@ app.post('/getSign',function(req,res){
     //console.log("pubKey", pubKey);
     console.log("addrBufaddrBufaddrBuf", util.bufferToHex(pubKey));
 
+    const EthCrypto = require('eth-crypto');
+    const signer = EthCrypto.recoverPublicKey(signature,message);
+     console.log("query money twitter twisted",signer);
+
+
 
 
 
