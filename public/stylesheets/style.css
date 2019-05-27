@@ -63,6 +63,18 @@ table {
 	border-spacing: 0;
 }
 
+.UserQuestions {
+	font-family: 'Montserrat';
+	font-size: 16px;
+	font-weight: 500;
+	color: #364655;
+	max-width: 630px;
+	margin: 0 auto;
+	letter-spacing: 0;
+	line-height: 1.6;
+	margin-top: 15px;
+}
+
 
 /* --- Common Styles ---*/
 

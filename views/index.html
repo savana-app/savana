@@ -37,11 +37,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto navbar-right">
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#products">Products</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#features">Features</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#reviews">Reviews</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>
-              <li class="nav-item"><a class="btn-cta nav-link js-scroll-trigger" href="#signup">Github</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#products">What's Public Key?</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#features">Benefits</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Earn Ether</a></li>
+              <li class="nav-item"><a class="btn-cta nav-link js-scroll-trigger" href="#signup">Decrypt</a></li>
             </ul>
           </div>
         </div>
@@ -61,9 +60,26 @@
                 <div class="hero-content wow fadeIn">
                   <h1>Decentralized 1password alternative.</h1>
                   <p>Encrypt your passwords with your ethereum address and only address owner can read that encrypted message privately on their computer.</p>
-                  <a id="signmessage" name="signmessage" class="btn-action js-scroll-trigger" style="color:white;" >Login with metamask</a>
+                  <p id="ethereumaddress"></p>
+
+                  <div class="form wow fadeIn" data-wow-delay="0.6s">
+
+
+                   <div id="send-pubkey" class="subscribe-form wow zoomIn">
+                     <input class="mail" id="pkey" type="text" name="pkey" placeholder="Password or 2fa key for encrypt" autocomplete="off"><br>
+                     <input class="mail" id="pkey" type="text" name="pkey" placeholder="Ethereum private key in the metamask" autocomplete="off">
+                     <input class="submit-button" type="submit" value="Encrypt & send ethereum chain with metamask">
+                   </div>
+                   <div id="response"></div>
+                 </div>
+
+
+                <!--  <a id="signmessage" name="signmessage" class="btn-action js-scroll-trigger" style="color:white;" >Login with metamask</a> -->
+
                 </div>
               </div>
+
+
 
 
               <div class="col-md-12">
@@ -89,64 +105,17 @@
             <div class="row text-center">
               <div class="col-md-12">
                 <div class="features-intro">
-                  <h2>Welcome to array, where data matters.</h2>
-                  <p>We’ll Deliver the best stories and ideas on the topics you care about most straight to your
-                  homepage, app, or inbox. </p>
+                  <h2>What is Ethereum Public key?</h2>
+                  <p>All cryptocurrency address creating with <a target="_blank" href="https://www.wikiwand.com/en/Digital_Signature_Algorithm">Digital Signature Algorithm</a> standarts.
+                    Ethereum addresses using  <a target="_blank" href="https://www.wikiwand.com/en/Elliptic_Curve_Digital_Signature_Algorithm">Elliptic Curve Digital Signature Algorithm.</a>
+                     One ethereum address created from your keccak-256 hash of public key then right most 20 bytes is your ethereum address.
+                     <br>Lastly, public key generate from your private key.
+                  </p>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="feature-list">
-                  <div class="card-icon">
-                    <div class="card-img">
-                      <img src="/icons/a1.png" width="35" alt="Feature">
-                    </div>
-                  </div>
-                  <div class="card-text">
-                    <h3>Responsive</h3>
-                    <p>Deliver the best stories and ideas on the topics you care about most straight to you.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="feature-list">
-                  <div class="card-icon">
-                    <div class="card-img">
-                      <img src="/icons/a2.png" width="35" alt="Feature">
-                    </div>
-                  </div>
-                  <div class="card-text">
-                    <h3>Responsive</h3>
-                    <p>Deliver the best stories and ideas on the topics you care about most straight to you.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="feature-list">
-                  <div class="card-icon">
-                    <div class="card-img">
-                      <img src="/icons/a3.png" width="35" alt="Feature">
-                    </div>
-                  </div>
-                  <div class="card-text">
-                    <h3>Responsive</h3>
-                    <p>Deliver the best stories and ideas on the topics you care about most straight to you.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="feature-list">
-                  <div class="card-icon">
-                    <div class="card-img">
-                      <img src="/icons/a4.png" width="35" alt="Feature">
-                    </div>
-                  </div>
-                  <div class="card-text">
-                    <h3>User Friendly</h3>
-                    <p>Deliver the best stories and ideas on the topics you care about most straight to you.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
+
+
+              <div class="col-md-6 col-lg-6">
                 <div class="feature-list">
                   <div class="card-icon">
                     <div class="card-img">
@@ -154,21 +123,24 @@
                     </div>
                   </div>
                   <div class="card-text">
-                    <h3> AI Algorithms</h3>
-                    <p>Deliver the best stories and ideas on the topics you care about most straight to you.</p>
+                    <h3>Get your public key usign metamask</h3>
+                    <p>Metamask fear from this method because of people can sign a transaction,
+                      but we just wanna reach your public key.</p>
+                    <a id="signmessage" name="signmessage" class="btn-action js-scroll-trigger" style="color:white;" >Get public key</a>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4">
+              <div class="col-md-6 col-lg-6">
                 <div class="feature-list">
                   <div class="card-icon">
                     <div class="card-img">
-                      <img src="/icons/a6.png" width="35" alt="Feature">
+                      <img src="/icons/a5.png" width="35" alt="Feature">
                     </div>
                   </div>
                   <div class="card-text">
-                    <h3>Built-in Camera</h3>
-                    <p>Deliver the best stories and ideas on the topics you care about most straight to you.</p>
+                    <h3>Generate new address with public key</h3>
+                    <p>Generate new address with public and private key but don't forget import this address to metamask using private key.</p>
+                    <a id="generatenewaddress" name="generatenewaddress" class="btn-action js-scroll-trigger" style="color:white;" >Generate and download</a>
                   </div>
                 </div>
               </div>
@@ -180,9 +152,11 @@
         <div id="features" class="flex-split">
            <div class="container-s">
              <div class="flex-intro align-center wow fadeIn">
-               <h2>Build better landing pages</h2>
-               <p> When you get staright to the point the presentation looks attractive on your web pages.
-                   Keep it simple and clean always.</p>
+               <h2>Backup your google authenticator 2FA key's.</h2>
+               <p> If you lose, steal or break your phone.
+                 if you don't store your 2FA codes anywhere thats mean your 2FA authenticator codes are hidden any
+                 you never ever login your exchange again and you can lose your money for this reason.
+               </p>
              </div>
              <div class="flex-inner align-center">
                  <div class="f-image wow">
@@ -190,22 +164,26 @@
                  </div>
                  <div class="f-text">
                    <div class="left-content">
-                     <h2>Dynamic charts.</h2>
-                     <p> When you get staright to the point the presentation looks attractive on your web pages.</p>
-                     <a href="#">Know more</a>
+                     <h2>Store your Google 2FA's on blockchain.</h2>
+                     <p>If you store this key's on notes or evernote PUBLİCLY this is absolutely not'a safe way.</p>
+
                    </div>
                  </div>
              </div>
 
              <div class="flex-inner flex-inverted align-center">
                <div class="f-image f-image-inverted">
-                 <img class="img-fluid" src="/images/feature.png" alt="Feature">
+                 <img class="img-fluid" src="/images/feature-2.png" alt="Feature">
                </div>
                <div class="f-text">
                  <div class="left-content">
-                   <h2>Mobile Analytics.</h2>
-                   <p> When you get staright to the point the presentation looks attractive on your web pages.</p>
-                   <a href="#">Know more</a>
+                   <h2>1password alternative</h2>
+                   <p>Millions of people storing passwords with their brain password.<br>
+                     We think this is a good idea but short.<br>
+                     1password is centralized and its out and out security bug for us.<br>
+                     If you wanna understand what we means please check what's Single point of failure.
+                  </p>
+                   <a target="_blank" href="https://en.wikipedia.org/wiki/Single_point_of_failure">Whats single point of failure</a>
                  </div>
                </div>
              </div>
@@ -213,173 +191,7 @@
          </div>
 
 
-         <!-- Counter Section -->
-         <div class="yd-stats wow fadeIn">
-           <div class="container-s">
-             <div class="row text-center">
-               <div class="col-sm-12">
-                 <div class="intro">
-                   <h2>Boost your revenue & cut work hours</h2>
-                   <p>Organized workflow and predictive patterns to boost your revenue.</p>
-                 </div>
-               </div>
-               <div class="col-sm-4">
-                 <div class="counter-up">
-                    <h3><span class="counter">47</span>%</h3>
-                   <div class="counter-text">
-                     <h2>Lesser backlogs</h2>
-                   </div>
-                 </div>
-               </div>
-               <div class="col-sm-4">
-                 <div class="counter-up">
-                    <h3><span class="counter">33</span>%</h3>
-                   <div class="counter-text">
-                     <h2>Higher Profits</h2>
-                   </div>
-                 </div>
-               </div>
-               <div class="col-sm-4">
-                 <div class="counter-up">
-                    <h3><span class="counter">33</span>%</h3>
-                   <div class="counter-text">
-                     <h2>Higher Profits</h2>
-                   </div>
-                 </div>
-               </div>
-               <div class="col-md-12">
-                 <div class="yd-link">
-                   <a href="#">Know more about the template</a>
-                 </div>
-               </div>
 
-             </div>
-           </div>
-         </div><!-- Counter Section Ends -->
-
-        <div class="ar-ft-single wow fadeIn">
-          <div class="container-m">
-            <div class="ar-feature">
-              <div class="ar-list">
-                <ul>
-                  <li>
-                    <div class="ar-icon">
-                      <img src="/icons/f1.png" width="30" alt="Icon">
-                    </div>
-                    <div class="ar-text">
-                      <h3>Client Support</h3>
-                      <p>Team hangouts and instant text messaging right from the dashboard.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="ar-icon">
-                      <img src="/icons/f4.png" width="30" alt="Icon">
-                    </div>
-                    <div class="ar-text">
-                      <h3>Secure Servers</h3>
-                      <p>Team hangouts and instant text messaging right from the dashboard.</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="ar-icon">
-                      <img src="/icons/f11.png" width="30" alt="Icon">
-                    </div>
-                    <div class="ar-text">
-                      <h3>Product Feedback</h3>
-                      <p>Team hangouts and instant text messaging right from the dashboard.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="ar-image">
-                <img class="ar-img img-fluid" src="/images/feature-2.png" alt="Hero Image">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-         <div id="reviews" class="yd-reviews"><!-- Array Reviews -->
-           <div class="container">
-             <div class="row text-center">
-               <div class="col-sm-12 col-lg-8 offset-lg-2">
-                 <div class="intro wow fadeIn" data-wow-delay="0.1s">
-                   <h1>Customers say nice things</h1>
-                   <p>We have  very fair pricing policy that would benefit you and us at the same time.
-                      Get the free plan &amp; if you need more - pay.
-                   </p>
-                 </div>
-               </div>
-
-               <div class="col-sm-12 col-lg-8 offset-lg-2 text-center">
-                 <div class="review-cards owl-carousel owl-theme wow fadeInDown" data-wow-delay="0.2s">
-                   <div class="card-single">
-                     <div class="review-text">
-                       <h1>"We have very fair pricing policy that would benefit you and us at the same time.
-                         Choose what price you're willing to pay. Get the free plan & if you need more - pay."
-                       </h1>
-                     </div>
-                     <div class="review-attribution">
-                       <div class="review-img">
-                         <img class="img-fluid rounded-circle" src="/icons/review-1.png" alt="Review">
-                       </div>
-                       <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-ios-star-half"></i>
-                       <h2> Albert Rossi</h2>
-                       <h6>Stack Developer</h6>
-                       <a href="#">Dropboxes Inc</a>
-                     </div>
-                   </div>
-                   <div class="card-single">
-                     <div class="review-text">
-                       <h1>"We have very fair pricing policy that would benefit you and us at the same time.
-                         Choose what price you're willing to pay. Get the free plan & if you need more - pay."
-                       </h1>
-                     </div>
-                     <div class="review-attribution">
-                       <div class="review-img">
-                         <img class="img-fluid rounded-circle" src="/icons/review-2.png" alt="Review">
-                       </div>
-                       <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-ios-star-half"></i>
-                       <h2> Melissa Vanbergh</h2>
-                       <h6>Vice President</h6>
-                       <a href="#">Vestor Corp</a>
-                     </div>
-                   </div>
-                   <div class="card-single">
-                     <div class="review-text">
-                       <h1>"We have very fair pricing policy that would benefit you and us at the same time.
-                         Choose what price you're willing to pay. Get the free plan & if you need more - pay."
-                       </h1>
-                     </div>
-                     <div class="review-attribution">
-                       <div class="review-img">
-                         <img class="img-fluid rounded-circle" src="/icons/review-3.png" alt="Review">
-                       </div>
-                       <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                      <i class="ion ion-star"></i>
-                       <h2> Joshua Peterson</h2>
-                       <h6>Product Developer</h6>
-                       <a href="#">Betabet Inc</a>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-         <!-- Array Reviews Ends -->
 
 
         <!-- Array Pricing Section -->
@@ -388,41 +200,45 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="pricing-intro wow fadeInDown">
-                  <h1>Pricing Plans.</h1>
+                  <h1>How to earn ethereum.</h1>
                   <p>
-                    Our plans are designed to meet the requirements of both beginners <br class="hidden-xs"> and players.
-                    Get the right plan that suits you.
+                    This service is works fully decentralized.<br class="hidden-xs">
+                     If you wanna store your password or 2fa key on ethereum network<br class="hidden-xs">
+                     You will pay a little bit amount of ethereum to keymaker.<br class="hidden-xs">
+                     Good news anyone can make a keymaker itself.<br class="hidden-xs">
+                     And keymaker's can detect his own comissions.
+
                   </p>
                 </div>
                 <div class="row">
                   <div class="col-lg-4 offset-lg-2 col-md-6">
                    <div class="table-left wow fadeInDown">
                      <div class="pricing-details">
-                       <h2>Freemium</h2>
+                       <h2>Earn from referrals</h2>
                        <img src="/icons/free.png" width="60" alt="Icon">
 
-                       <span>$0.00</span>
+                       <span>TX/2 ETH</span>
                           <ul>
-                           <li>First basic feature </li>
-                           <li>Second feature goes here</li>
-                           <li>Any other third feature</li>
+                           <li>If you add your ethereum addres<br> last of the url like</li>
+                           <li>savana.app/0x7cE....</li>
+                           <li>You can earn %50 slice from comission pie!</li>
                            </ul>
-                         <button class="btn-action">Get Plan</button>
+
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
                     <div class="table-right wow fadeInDown">
                       <div class="pricing-details">
-                         <h2>Beginner</h2>
+                         <h2>Became a KeyMaker</h2>
                          <img src="/icons/paid.png" width="60" alt="Icon">
-                         <span>$24.99</span>
+                         <span>X ETH</span>
                          <ul>
-                           <li>First premium feature </li>
-                           <li>Second premium one goes here</li>
-                           <li>Third premium feature here</li>
+                           <li>Basicly you can make a savana alternative instanly.</li>
+                           <li>Allcodes and smart contract details public and free for everyone.</li>
+
                          </ul>
-                         <button class="btn-action">Buy Now</button>
+                         <button class="btn-action">How Contract works</button>
                       </div>
                     </div>
                   </div>
@@ -437,17 +253,24 @@
         <div id="signup" class="cta-sm">
           <div class="container-m text-center">
             <div class="cta-content">
-               <h4>GRAB ARRAY FOR BEST PRICE TODAY</h4>
-               <h1>Start now and turn your online business into a profitable route.</h1>
+               <h4>Dectypt your password using your private key, we are coding a desktop software for that.
+                Is will be more secure from this method.<br><br>
+              Thank you for your understanding.</h4>
+               <h1>Dectypt</h1>
+
+
                <div class="form wow fadeIn" data-wow-delay="0.2s">
                 <form id="chimp-form" class="subscribe-form wow zoomIn" action="/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                  <input class="mail" id="chimp-email" type="email" name="email" placeholder="Enter your email address" autocomplete="off">
-                  <input class="submit-button" type="submit" value="Sign up now">
+                  <input class="mail" id="privatekey" type="text" name="privatekey" placeholder="Enter your private key" autocomplete="off"><br>
+                  <input class="mail" id="privatekey" type="text" name="privatekey" placeholder="Enter your encrypted text" autocomplete="off">
+                  <input class="submit-button" type="submit" value="Decrypt">
                 </form>
                 <div id="response"></div>
               </div>
+
+
               <div class="form-note">
-                <p>14-day free trial and no credit card required.</p>
+                <p>Reading data's from ethereum network is free.</p>
               </div>
             </div>
           </div>
@@ -459,16 +282,16 @@
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <a class="footer-logo" href="#">array.</a>
+                <a class="footer-logo" href="#">savana.</a>
               </div>
               <div class="col-md-4">
-                <h6>&copy; IOThemes 2018 Rights Reserved</h6>
+                <h6>&copy; Savana.app 2019 Rights Reserved</h6>
               </div>
               <div class="col-md-4">
                 <ul>
-                  <li><a href="#">Facebook</a></li>
-                  <li><a href="#">Twitter</a></li>
-                  <li><a href="#">Linkedin</a></li>
+                  <li><a href="https://t.me/savanaapp" target="_blank">Telegram</a></li>
+                  <li><a href="https://twitter.com/savanaapp" target="_blank">Twitter</a></li>
+                  <li><a href="https://github.com/savana-app" target="_blank">Github</a></li>
                 </ul>
               </div>
             </div>
