@@ -4,8 +4,7 @@ var app = express.Router();
 path = require('path');
 var bodyParser =        require("body-parser");
 const util = require('ethereumjs-util');
-const Eth = require('ethjs');
-const eth = new Eth(new Eth.HttpProvider('https://mainnet.infura.io/v3/5fb8eb0a6c5646fb891f99d133c14510'));
+const EthCrypto = require('eth-crypto');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -31,7 +30,7 @@ app.post('/getSign',function(req,res){
     console.log(addr);
     //console.log("pubKey", pubKey);
     console.log("addrBufaddrBufaddrBuf", util.bufferToHex(pubKey));
-    const EthCrypto = require('eth-crypto');
+
     const signer = EthCrypto.recoverPublicKey(signature,message);
     console.log("query money twitter twisted",signer);
     res.end("ok");
@@ -45,8 +44,11 @@ app.post('/getSign',function(req,res){
 app.post('/LoginWithPKEY',function(req,res){
   var userprivatekey =req.body.privatekey;
   if(userprivatekey) {
-    console.log("i receive private key correctly.", userprivatekey);
-    res.end("i receive private key correctly.", userprivatekey);
+
+
+    const publicKey = EthCrypto.publicKeyByPrivateKey(userprivatekey);
+    console.log("i receive private key correctly.", publicKey);
+    res.end("i publicKey key correctly.", publicKey);
   } else {
       res.end("fail");
   }
