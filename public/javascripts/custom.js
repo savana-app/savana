@@ -122,12 +122,37 @@ $('.counter').counterUp({
 
 $(document).ready(function() {
 
+  console.log("address here",web3.eth.coinbase);
+  $("#ethereumaddress").text('You need use that (' + String(web3.eth.coinbase).substring(0,10)+'...)  ethereum addresses private key  or change address from metamask.')
+
+   $("#logmein").click(function (){
+     console.log("encrypt works correctly.");
+     var privatekey = $("#pkey").val();
+     $.ajax({
+       type:'POST',
+       url:'/LoginWithPKEY/',
+       data:{privatekey: privatekey},
+       success:function(msg){
+         console.log(msg);
+         if (msg["response"] == "ok") {
+           console.log(msg);
+          }
+         else {
+              console.log(msg);
+         }
+       },
+     });
 
 
 
-   $("#signmessage").click(function (){
 
 
+});
+
+
+
+
+   $("#signmessage").click(function () {
    const message = web3.sha3("Hello from savana22!")
    console.log('messageqq', message);
    console.log(web3.eth.coinbase);
@@ -151,40 +176,8 @@ $(document).ready(function() {
          }
        },
      });
-
-
-
-     //window.alert(result);
-
-     //web3.personal.ecRecover(message, result, function (err, result) {
-     //   console.log("pu yayayya",err, result);
-     //  });
-
-
-
    });
-
-
-         //ethereumjs-util
-
-        //const msg = 'dinosaur';
-        //const msgHash = ethereumJsUtil.sha3(msg);
-        // The rest is the same as above
-        //const signatureBuffer = ethereumJsUtil.toBuffer(signature);
-        //const signatureParams = ethereumJsUtil.fromRpcSig(signatureBuffer);
-        //const publicKey = ethereumJsUtil.ecrecover(
-        //  msgHash,
-        //  signatureParams.v,
-        //  signatureParams.r,
-        //  signatureParams.s
-        //);
-        //const addressBuffer = ethereumJsUtil.publicToAddress(publicKey);
-        //const address = ethereumJsUtil.bufferToHex(addressBuffer);
-
-
-
-
-        });
+});
 
 
 
