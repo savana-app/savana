@@ -75,6 +75,20 @@ app.post('/decryptMessage',function(req,res){
 var staticPath = path.join(__dirname, '../public/');
 app.use('/public', express.static(staticPath))
 
+/* final catch-all route to index.html defined last */
+app.get('/interface', (req, res) => {
+  var htmlFile = path.join(__dirname, '../views/interface.html');
+  res.sendFile(htmlFile);
+})
+
+
+
+/* final catch-all route to index.html defined last */
+app.get('/sharenew', (req, res) => {
+  var htmlFile = path.join(__dirname, '../views/sharenew.html');
+  res.sendFile(htmlFile);
+})
+
 
 /* final catch-all route to index.html defined last */
 app.get('/*', (req, res) => {
