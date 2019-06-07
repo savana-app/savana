@@ -80,8 +80,8 @@
                         <!--end responsive nav toggle button-->
                         <!--start tbmenu-->
                         <ul id="menu" class="tbmenu light-sub-menu slide-effect">
-                            <li class="active"><a href="/interface">Show encrypted messages & Decrypt </a></li>
-                            <li><a href="/sharenew">Decrypt & Store New Password </a></li>
+                            <li ><a href="/interface">Show encrypted messages & Decrypt </a></li>
+                            <li class="active"><a href="/sharenew">Encrypt & Store New Password </a></li>
 
                         </ul>
                         <!--end tbmenu-->
@@ -137,7 +137,7 @@
                         <div class="card card-shadow mb-4 ">
                             <div class="card-header border-0">
                                 <div class="custom-title-wrap border-0 position-relative pb-2">
-                                    <div class="custom-title">Employee Data Table</div>
+                                    <div class="custom-title">Encrypt and store a new password or 2FA</div>
 
                                 </div>
                             </div>
@@ -146,23 +146,44 @@
                                     <table class="table table-hover table-custom">
                                         <thead>
                                         <tr>
-                                            <th scope="col">Img</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Time</th>
-                                            <th scope="col">Type</th>
+                                            <th scope="col">Your Address</th>
+                                            <th scope="col">Your password or 2FA</th>
+                                            <th scope="col">Private key</th>
                                             <th scope="col">Transaction link</th>
 
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>
+                                            <td id="ethadddr">
                                                 <img class="rounded-circle mr-3 table-thumb" src="/images/avatar/avatar1.jpg" alt=""/>
                                             </td>
-                                            <td>0xfbd6f9704478104f0ef3f4f9834c3621210fe598</td>
-                                            <td>5 min ago</td>
-                                            <td><span class="badge badge-info form-pill px-3 py-1">New Pass stored</span></td>
-                                            <td><a href="https://etherscan.io/address/0x096839afb376a09f16966acf4ed133a44e100ed5#contracts" target="_blank">Check</a></td>
+
+                                            <td>
+                                              <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                  <span class="input-group-text" id="inputGroup-sizing-sm">Password or 2FA</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                              </div>
+                                            </td>
+
+                                            <td>
+                                              <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                  <span class="input-group-text" id="inputGroup-sizing-sm">Private Key</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                              </div>
+                                            </td>
+
+
+
+
+                                          <td>
+                                            <button id="encplease" type="button" class="btn btn-outline-primary btn-sm">Encrypt and store</button>
+                                          </td>
+
 
                                         </tr>
 
@@ -230,6 +251,7 @@
 
     <!--basic scripts initialization-->
     <script src="/javascripts/scripts.js"></script>
+      <script src="/javascripts/interface.js"></script>
 
     <script>
         tbmenu.init({

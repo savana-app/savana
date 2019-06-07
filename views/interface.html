@@ -81,7 +81,7 @@
                         <!--start tbmenu-->
                         <ul id="menu" class="tbmenu light-sub-menu slide-effect">
                             <li class="active"><a href="/interface">Show encrypted messages & Decrypt </a></li>
-                            <li><a href="/sharenew">Decrypt & Store New Password </a></li>
+                            <li><a href="/sharenew">Encrypt & Store New Password </a></li>
 
                         </ul>
                         <!--end tbmenu-->
@@ -137,7 +137,7 @@
                         <div class="card card-shadow mb-4 ">
                             <div class="card-header border-0">
                                 <div class="custom-title-wrap border-0 position-relative pb-2">
-                                    <div class="custom-title">You need use that (0x47da84b9...) ethereum addresses private key or change address from metamask.</div>
+                                    <div id="explainmessage" class="custom-title">Wcome.</div>
 
                                 </div>
                             </div>
@@ -146,8 +146,8 @@
                                     <table class="table table-hover table-custom">
                                         <thead>
                                         <tr>
-                                            <th scope="col">Img</th>
-                                            <th scope="col">Address</th>
+                                            <th scope="col">Your address</th>
+                                            <th scope="col">Message</th>
                                             <th scope="col">Timestamp</th>
                                             <th scope="col">Private key for decryption</th>
                                             <th scope="col">Decryption</th>
@@ -156,10 +156,12 @@
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>
+                                            <td id="ethadddr">
+
                                                 <img class="rounded-circle mr-3 table-thumb" src="/images/avatar/avatar1.jpg" alt=""/>
+
                                             </td>
-                                            <td>0xfbd6f9704478104f0ef3f4f9834c3621210fe598</td>
+                                            <td>This is your message....</td>
                                             <td>5 min ago</td>
 
                                             <td>
@@ -168,7 +170,7 @@
                                                 <div class="input-group-prepend">
                                                   <span class="input-group-text" id="inputGroup-sizing-sm">Private Key</span>
                                                 </div>
-                                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                                <input type="password" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                                               </div>
                                             </td>
 
@@ -245,6 +247,7 @@
 
     <!--basic scripts initialization-->
     <script src="/javascripts/scripts.js"></script>
+    <script src="/javascripts/interface.js"></script>
 
     <script>
         tbmenu.init({
