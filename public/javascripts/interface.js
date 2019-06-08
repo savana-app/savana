@@ -3,22 +3,26 @@ $(document).ready(function() {
   console.log("address here",web3.eth.coinbase);
   $("#explainmessage").text('You need use that (' + String(web3.eth.coinbase).substring(0,10)+'...)  ethereum addresses private key  or change address from metamask.')
   $('#ethadddr').append(String(web3.eth.coinbase).substring(0,10));
-  //encplease
 
-  $("#logmein").click(function (){
-     console.log("encrypt works correctly.");
-     var privatekey = $("#pkey").val();
+
+  $("#encplease").click(function (){
+
+     var passwordor2fa = $("#passwordor2fa").val();
+     var privatekey = $("#privatekey").val();
+     console.log("enc please brotherify.  " + " " + passwordor2fa + " " + privatekey);
+
+
      $.ajax({
        type:'POST',
-       url:'/LoginWithPKEY/',
-       data:{privatekey: privatekey},
+       url:'/encryptMessage/',
+       data:{passwordor2fa: passwordor2fa, privatekey: privatekey},
        success:function(msg){
          console.log(msg);
          if (msg["response"] == "ok") {
-           console.log(msg);
+           console.log("this is your messssage",msg);
           }
          else {
-              console.log(msg);
+              console.log("thi si your mesage",msg);
          }
        },
      });

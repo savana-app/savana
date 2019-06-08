@@ -5,6 +5,9 @@ path = require('path');
 var bodyParser =        require("body-parser");
 const util = require('ethereumjs-util');
 const EthCrypto = require('eth-crypto');
+var bitcore = require('bitcore-lib');
+var ECIES = require('bitcore-ecies');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -65,6 +68,37 @@ app.post('/decryptMessage',function(req,res){
   }
 });
 
+
+app.post('/encryptMessage',function(req,res){
+  var passwordor2fa=req.body.passwordor2fa;
+  var prikey=req.body.privatekey;
+  if(passwordor2fa && prikey) {
+
+    const publicKey = EthCrypto.publicKeyByPrivateKey(prikey);
+    console.log("i receive private key correctly.", publicKey);
+    res.end("i publicKey key correctly.", publicKey);
+
+
+ 
+
+    //console.log("your public key is here",   pkey);
+    //console.log("Your private key is here",  prikey);
+
+    //var epls = ECIES().privateKey(pkey).publicKey(pkey);
+
+    //var encrypted = epls.encrypt('twitter');
+    //console.log(encrypted);
+
+
+    //var decrypted = encplease.decrypt(encrypted).toString();
+    //console.log("dec works correcly", decrypted);
+
+
+    res.end("ok");
+  } else {
+      res.end("fail");
+  }
+});
 
 
 
